@@ -29,7 +29,7 @@ namespace KCTR
             if (level >= Level)
             {
                 string updatedMsg = addPrefix(message);
-                if (ex is not null)
+                if (ex != null)
                 {
                     Debug.LogException(ex);
                 }
