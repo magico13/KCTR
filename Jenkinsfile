@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Preparing.'
                 //unzip dlls
-                sh 'wget https://magico13.net/files/KSP1.12.1.zip'
+                sh 'curl -o https://magico13.net/files/KSP1.12.1.zip'
                 sh 'unzip KSP1.12.1.zip'
             }
         }
