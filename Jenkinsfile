@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'mkdir GameData/KCTR/Plugins'
+                sh 'mkdir -p GameData/KCTR/Plugins'
                 sh 'cp LICENSE GameData/KCTR/LICENSE.txt'
                 sh 'cp -r KCTR/bin/Release/KCTR*.dll GameData/KCTR/Plugins/'
                 sh 'zip KCTR.zip GameData'
