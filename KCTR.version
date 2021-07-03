@@ -1,0 +1,19 @@
+{
+  "NAME": "KCTR",
+  "GITHUB": {
+    "USERNAME": "magico13",
+    "REPOSITORY": "KCTR",
+    "ALLOW_PRE_RELEASE": false
+  },
+  "VERSION": {
+    "MAJOR": 0,
+    "MINOR": 1,
+    "PATCH": 0,
+    "BUILD": 0
+  },
+  "KSP_VERSION_MIN": {
+    "MAJOR": 1,
+    "MINOR": 12,
+    "PATCH": 0
+  }
+}

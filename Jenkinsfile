@@ -8,6 +8,7 @@ pipeline {
                 //unzip dlls
                 sh 'curl https://magico13.net/files/KSP1.12.1.zip -o dlls.zip'
                 sh 'unzip dlls.zip'
+                sh 'python3 version.py ${BUILD_NUMBER}'
             }
         }
         stage('Build') {
@@ -26,6 +27,7 @@ pipeline {
                 echo 'Deploying....'
                 sh 'mkdir -p GameData/KCTR/Plugins'
                 sh 'cp LICENSE GameData/KCTR/LICENSE.txt'
+                sh 'cp KCTR.version GameData/KCTR/KCTR.version'
                 sh 'cp -r KCTR/bin/Release/KCTR*.dll GameData/KCTR/Plugins/'
                 sh 'zip -r KCTR.zip GameData'
                 archiveArtifacts artifacts: 'KCTR.zip', followSymlinks: false
