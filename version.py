@@ -16,7 +16,7 @@ print(f'Version: {fullVer}')
 
 # write back to the version file with the updated build number
 with open('KCTR.version', 'w') as f:
-    json.dump(data, f)
+    json.dump(data, f, indent=2)
 
 # write to the version.cs file with the updated version
 with open('KCTR/Properties/VersionInfo.cs', 'w') as f:
