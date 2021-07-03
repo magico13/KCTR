@@ -27,7 +27,7 @@ pipeline {
                 sh 'mkdir -p GameData/KCTR/Plugins'
                 sh 'cp LICENSE GameData/KCTR/LICENSE.txt'
                 sh 'cp -r KCTR/bin/Release/KCTR*.dll GameData/KCTR/Plugins/'
-                sh 'zip KCTR.zip GameData'
+                sh 'zip -r KCTR.zip GameData'
                 archiveArtifacts artifacts: 'KCTR.zip', followSymlinks: false
             }
         }
