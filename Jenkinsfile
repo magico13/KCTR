@@ -24,10 +24,10 @@ pipeline {
         }
         stage('Deploy') {
             environment {
-                KCTR_VERSION = sh(
+                KCTR_VERSION = """${sh(
                     returnStdout: true, 
                     script: 'cat version.txt'
-                )
+                )}"""
             }
             steps {
                 echo 'Deploying....'
