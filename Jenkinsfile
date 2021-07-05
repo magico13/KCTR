@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    KCTR_VERSION = readFile 'version.txt'
+                    KCTR_VERSION = sh returnStdout: true, script: 'cat version.txt'
                 }
                 
                 echo 'Deploying....'
