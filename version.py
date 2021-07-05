@@ -20,7 +20,7 @@ with open('KCTR.version', 'w') as f:
     json.dump(data, f, indent=2)
 
 with open('version.txt', 'w') as f:
-    f.write(f'{fullVer}')
+    f.write(f'{fullVer}\n')
 
 # write to the version.cs file with the updated version
 with open('KCTR/Properties/VersionInfo.cs', 'w') as f:
