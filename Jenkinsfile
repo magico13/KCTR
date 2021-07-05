@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    env.KCTR_VERSION = sh(returnStdout: true, script: 'more version.txt').trim()
+                    env.KCTR_VERSION = sh(returnStdout: true, script: 'cat version.txt').trim()
                 }
                 
                 echo 'Deploying....'
@@ -34,7 +34,7 @@ pipeline {
                 sh 'cp KCTR.version GameData/KCTR/KCTR.version'
                 sh 'cp -r KCTR/bin/Release/KCTR*.dll GameData/KCTR/Plugins/'
                 sh 'zip -r KCTR_${KCTR_VERSION}.zip GameData'
-                archiveArtifacts artifacts: 'KCTR_${KCTR_VERSION}.zip', followSymlinks: false
+                archiveArtifacts artifacts: 'KCTR_${env.KCTR_VERSION}.zip', followSymlinks: false
             }
         }
     }
