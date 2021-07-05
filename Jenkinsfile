@@ -29,8 +29,8 @@ pipeline {
                 sh 'cp LICENSE GameData/KCTR/LICENSE.txt'
                 sh 'cp KCTR.version GameData/KCTR/KCTR.version'
                 sh 'cp -r KCTR/bin/Release/KCTR*.dll GameData/KCTR/Plugins/'
-                sh 'zip -r KCTR.zip GameData'
-                archiveArtifacts artifacts: 'KCTR.zip', followSymlinks: false
+                sh 'zip -r KCTR_${KCTR_VERSION}.zip GameData'
+                archiveArtifacts artifacts: 'KCTR_${KCTR_VERSION}.zip', followSymlinks: false
             }
         }
     }

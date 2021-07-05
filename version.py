@@ -1,5 +1,6 @@
 import sys
 import json
+import os
 
 build = 0
 if len(sys.argv) > 1:
@@ -23,4 +24,5 @@ with open('KCTR/Properties/VersionInfo.cs', 'w') as f:
     f.write('using System.Reflection;\n')
     f.write(f'[assembly: AssemblyFileVersion("{fullVer}")]\n')
 
+os.environ['KCTR_VERSION'] = fullVer
 print('Versioning complete.')
