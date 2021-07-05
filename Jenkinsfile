@@ -24,7 +24,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                KCTR_VERSION = sh (script: 'cat version.txt', , returnStdout:true).trim()
+                script {
+                    KCTR_VERSION = readFile 'version.txt'
+                }
+                
                 echo 'Deploying....'
                 sh 'mkdir -p GameData/KCTR/Plugins'
                 sh 'cp LICENSE GameData/KCTR/LICENSE.txt'
