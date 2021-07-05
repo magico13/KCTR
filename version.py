@@ -19,10 +19,12 @@ print(f'Version: {fullVer}')
 with open('KCTR.version', 'w') as f:
     json.dump(data, f, indent=2)
 
+with open('version.txt', 'w') as f:
+    f.write(f'{fullVer}')
+
 # write to the version.cs file with the updated version
 with open('KCTR/Properties/VersionInfo.cs', 'w') as f:
     f.write('using System.Reflection;\n')
     f.write(f'[assembly: AssemblyFileVersion("{fullVer}")]\n')
 
-os.environ['KCTR_VERSION'] = fullVer
 print('Versioning complete.')
