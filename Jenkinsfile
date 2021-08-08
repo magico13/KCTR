@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Preparing.'
                 //unzip dlls
-                sh 'curl https://magico13.net/files/KSP1.12.1.zip -o dlls.zip'
+                sh 'curl https://magico13.net/files/KSP1.12.2.zip -o dlls.zip'
                 sh 'unzip dlls.zip'
                 sh 'python3 version.py ${BUILD_NUMBER}'
             }
